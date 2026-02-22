@@ -1,0 +1,163 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #1f2933;
+}
+
+/* ================= TOPBAR ================= */
+.topbar {
+    background: #0f2a44;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ================= LAYOUT ================= */
+.dashboard {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: calc(100vh - 60px);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 8px;
+    color: #455a64;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #e3f2fd;
+    color: #1e88e5;
+}
+
+/* ================= CONTENT ================= */
+.content {
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+/* ================= RISK ================= */
+.risk-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.risk-label {
+    font-size: 14px;
+    color: #607d8b;
+}
+
+.low {
+    color: #2e7d32;
+}
+
+/* ================= UPLOAD ================= */
+.upload-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.upload-group label {
+    font-size: 14px;
+}
+
+.upload-group input {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.upload-form button {
+    grid-column: span 3;
+    margin-top: 20px;
+    padding: 12px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ================= AI EXPLANATION ================= */
+.explain-list {
+    list-style: none;
+}
+
+.explain-list li {
+    margin-bottom: 10px;
+}
+
+/* ================= PRIVACY ================= */
+.privacy-card ul {
+    margin: 15px 0;
+    list-style: none;
+}
+
+.privacy-card li {
+    margin-bottom: 10px;
+}
+
+.consent {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .upload-form {
+        grid-template-columns: 1fr;
+    }
+}

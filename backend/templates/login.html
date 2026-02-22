@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LendNova | Secure Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <!-- LEFT BRAND PANEL -->
+    <section class="brand-panel">
+        <div class="brand-content">
+            <h1><i class="fas fa-university"></i> LendNova</h1>
+            <p class="tagline">
+                AI-powered credit assessment platform
+                for banks and financial institutions.
+            </p>
+
+            <ul class="trust-points">
+                <li><i class="fas fa-lock"></i> End-to-end encrypted access</li>
+                <li><i class="fas fa-shield-halved"></i> Bank-grade security</li>
+                <li><i class="fas fa-eye"></i> Explainable AI decisions</li>
+                <li><i class="fas fa-user-check"></i> Consent-based data usage</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- RIGHT LOGIN FORM -->
+    <section class="login-panel">
+        <div class="login-card">
+
+            <h2>Secure Login</h2>
+            <p class="subtitle">
+                Sign in to access your borrower dashboard
+            </p>
+
+            <!-- REAL FLASK FORM -->
+            <form method="POST" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="name@example.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="••••••••"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember">
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#" class="forgot-link">
+                        Forgot password?
+                    </a>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login Securely
+                </button>
+
+            </form>
+
+            <p class="register-link">
+                New borrower?
+                <a href="{{ url_for('register') }}">
+                    Apply for credit
+                </a>
+            </p>
+
+            <p class="privacy-note">
+                <i class="fas fa-shield"></i>
+                Your credentials are protected using encrypted authentication.
+            </p>
+
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

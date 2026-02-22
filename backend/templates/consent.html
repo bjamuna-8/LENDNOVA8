@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Privacy & Consent | LendNova</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/consent.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="consent-container">
+
+    <div class="consent-card">
+
+        <div class="icon">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+
+        <h1>Data Privacy & Consent</h1>
+        <p class="subtitle">
+            Before proceeding, permission is required to access and analyze financial data.
+        </p>
+
+        <div class="policy-box">
+
+            <h3>1. Data Collection</h3>
+            <p>
+                Financial documents including bank statements, rent receipts,
+                and utility bills are collected solely for credit assessment purposes.
+            </p>
+
+            <h3>2. AI Analysis</h3>
+            <p>
+                Automated artificial intelligence algorithms extract relevant
+                information from submitted documents. Raw data is encrypted at rest.
+            </p>
+
+            <h3>3. Third-Party Sharing</h3>
+            <p>
+                Data is shared only with partnered lending institutions
+                for loan processing and is never sold for marketing purposes.
+            </p>
+
+            <h3>4. Regulatory Compliance</h3>
+            <p>
+                The system adheres to financial regulations and data protection
+                laws governing sensitive personal information.
+            </p>
+
+            <h3>5. Revocation</h3>
+            <p>
+                Consent may be revoked at any time by contacting support,
+                resulting in deletion of processed data.
+            </p>
+
+        </div>
+
+        <form method="POST" action="{{ url_for('consent') }}">
+
+            <div class="checkbox-container">
+                <input type="checkbox" name="agree" required>
+                <label>
+                    I have read and agree to the Terms of Service and Privacy Policy.
+                </label>
+            </div>
+
+            <div class="buttons">
+                <a href="{{ url_for('logout') }}" class="cancel-btn">
+                    Cancel
+                </a>
+
+                <button type="submit" class="accept-btn">
+                    <i class="fas fa-check"></i> Accept & Continue
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    height: 100vh;
+}
+
+/* ================= PAGE LAYOUT ================= */
+.register-page {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    height: 100vh;
+}
+
+/* ================= INFO PANEL ================= */
+.info-panel {
+    background: linear-gradient(135deg, #0f2a44, #123b63);
+    color: white;
+    padding: 80px 70px;
+    display: flex;
+    align-items: center;
+}
+
+.info-content h1 {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.benefits {
+    list-style: none;
+}
+
+.benefits li {
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+/* ================= FORM PANEL ================= */
+.form-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-card {
+    width: 460px;
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+}
+
+.register-card h2 {
+    font-size: 26px;
+    color: #0f2a44;
+    margin-bottom: 6px;
+}
+
+.form-subtitle {
+    color: #607d8b;
+    margin-bottom: 30px;
+}
+
+/* ================= FORM ================= */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.input-wrapper i {
+    margin-right: 10px;
+    color: #607d8b;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* ================= CONSENT ================= */
+.consent-box {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #455a64;
+}
+
+.consent-box input {
+    margin-right: 8px;
+}
+
+/* ================= BUTTON ================= */
+.register-btn {
+    width: 100%;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background: #1565c0;
+}
+
+/* ================= FOOTER ================= */
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.privacy-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #607d8b;
+    text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .register-page {
+        grid-template-columns: 1fr;
+    }
+
+    .info-panel {
+        display: none;
+    }
+}

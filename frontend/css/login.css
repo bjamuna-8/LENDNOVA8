@@ -1,0 +1,156 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    height: 100vh;
+}
+
+/* ================= LAYOUT ================= */
+.login-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+/* ================= BRAND PANEL ================= */
+.login-brand {
+    background: linear-gradient(135deg, #0f2a44, #123b63);
+    color: white;
+    padding: 80px 60px;
+}
+
+.login-brand h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.login-brand p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.login-brand ul {
+    list-style: none;
+}
+
+.login-brand li {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* ================= LOGIN FORM ================= */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: white;
+    width: 420px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.login-card h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: #0f2a44;
+}
+
+.subtitle {
+    color: #607d8b;
+    margin-bottom: 30px;
+}
+
+/* ================= INPUTS ================= */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.input-box i {
+    margin-right: 10px;
+    color: #607d8b;
+}
+
+.input-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* ================= OPTIONS ================= */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.login-options a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+/* ================= BUTTON ================= */
+.btn-login {
+    width: 100%;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: #1565c0;
+}
+
+/* ================= FOOTER ================= */
+.footer-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.footer-text a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .login-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand {
+        display: none;
+    }
+}

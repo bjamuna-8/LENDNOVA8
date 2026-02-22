@@ -1,0 +1,165 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    height: 100vh;
+}
+
+/* ================= LAYOUT ================= */
+.login-page {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    height: 100vh;
+}
+
+/* ================= BRAND PANEL ================= */
+.brand-panel {
+    background: linear-gradient(135deg, #0f2a44, #123b63);
+    color: #ffffff;
+    padding: 80px 70px;
+    display: flex;
+    align-items: center;
+}
+
+.brand-content h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.trust-points {
+    list-style: none;
+}
+
+.trust-points li {
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+/* ================= LOGIN PANEL ================= */
+.login-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 420px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+}
+
+.login-card h2 {
+    font-size: 26px;
+    color: #0f2a44;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #607d8b;
+    margin-bottom: 30px;
+}
+
+/* ================= FORM ================= */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.input-wrapper i {
+    margin-right: 10px;
+    color: #607d8b;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* ================= OPTIONS ================= */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.forgot-link {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+/* ================= BUTTON ================= */
+.login-btn {
+    width: 100%;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #1565c0;
+}
+
+/* ================= FOOTER ================= */
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+.privacy-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #607d8b;
+    text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-panel {
+        display: none;
+    }
+}

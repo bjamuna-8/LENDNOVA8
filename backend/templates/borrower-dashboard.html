@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LendNova | Borrower Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <i class="fas fa-university"></i>
+        <span>LendNova</span>
+    </div>
+
+    <div class="user-area">
+        <i class="fas fa-user-circle"></i>
+        <span>{{ session['user_name'] }}</span>
+        <a href="{{ url_for('logout') }}">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+</header>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <a class="active" onclick="showSection('dashboard',this)">
+            <i class="fas fa-chart-pie"></i> Dashboard
+        </a>
+        <a onclick="showSection('documents',this)">
+            <i class="fas fa-file-upload"></i> Documents
+        </a>
+        <a onclick="showSection('assessment',this)">
+            <i class="fas fa-brain"></i> AI Assessment
+        </a>
+        <a onclick="showSection('privacy',this)">
+            <i class="fas fa-shield-halved"></i> Privacy
+        </a>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        {% if error %}
+        <div class="alert error">{{ error }}</div>
+        {% endif %}
+        {% if success %}
+        <div class="alert success">{{ success }}</div>
+        {% endif %}
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="tab-section">
+
+            {% if assessment %}
+            <section class="card">
+                <h2><i class="fas fa-chart-line"></i> Credit Assessment Results</h2>
+
+                <div class="summary-grid">
+                    <div class="summary-box">
+                        <p class="label">Credit Score</p>
+                        <h3>{{ assessment["credit_score"] }}</h3>
+                    </div>
+                    <div class="summary-box">
+                        <p class="label">Risk Level</p>
+                        <h3>{{ assessment["risk_level"] }}</h3>
+                    </div>
+                    <div class="summary-box">
+                        <p class="label">Fraud Score</p>
+                        <h3>{{ assessment["fraud_score"] }}/100</h3>
+                    </div>
+                    <div class="summary-box">
+                        <p class="label">Eligible Amount</p>
+                        <h3>₹ {{ assessment["eligible_amount"] }}</h3>
+                    </div>
+                </div>
+
+                <div class="insights-box">
+                    <h4>AI Insights</h4>
+                    <p>{{ assessment["insights"] }}</p>
+                </div>
+            </section>
+            {% else %}
+            <p>No assessment completed yet.</p>
+            {% endif %}
+
+        </section>
+
+       <!-- DOCUMENTS -->
+<section id="documents" class="tab-section hidden">
+
+    <div class="page-header">
+        <h2>Upload Documents</h2>
+        <div class="doc-progress">
+            {{ valid_docs }} of 5
+            <span>Documents Uploaded</span>
+        </div>
+    </div>
+
+    <!-- ANALYSIS STATUS -->
+    <div class="analysis-box">
+        <div class="analysis-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Analysis Pending</h3>
+            <p>
+                Upload all required documents to generate your AI-powered
+                credit score and risk assessment.
+            </p>
+
+            <a href="{{ url_for('run_assessment') }}" class="generate-btn">
+                <i class="fas fa-chart-line"></i>
+                Generate Credit Score
+            </a>
+
+            <small>Minimum 5 verified documents required.</small>
+        </div>
+    </div>
+
+    <!-- REQUIRED DOCUMENTS GRID -->
+    <form method="POST"
+          action="{{ url_for('upload_documents') }}"
+          enctype="multipart/form-data">
+
+        <div class="document-grid">
+
+            <!-- CARD -->
+            <div class="doc-card">
+                <h4>Rent Receipt</h4>
+                <p>Recent monthly payment proof</p>
+                <label>
+                    <input type="file" name="rent_receipt" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>Electricity Bill</h4>
+                <p>Latest electricity bill</p>
+                <label>
+                    <input type="file" name="electricity_bill" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>UPI Statement</h4>
+                <p>6 months UPI transaction history</p>
+                <label>
+                    <input type="file" name="upi_transactions" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>Mobile Recharge</h4>
+                <p>History of mobile recharges</p>
+                <label>
+                    <input type="file" name="mobile_recharge" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+             <div class="doc-card">
+                <h4>Gas bill</h4>
+                <p>6 months gas bill</p>
+                <label>
+                    <input type="file" name="gas_bill" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>Bank Statement</h4>
+                <p>Last 6 months bank statement</p>
+                <label>
+                    <input type="file" name="bank_statement" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>Income Proof</h4>
+                <p>Salary / Income verification</p>
+                <label>
+                    <input type="file" name="income_proof" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>Water Bill</h4>
+                <p>Recent water bill</p>
+                <label>
+                    <input type="file" name="water_bill" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+            <div class="doc-card">
+                <h4>Internet Bill</h4>
+                <p>Broadband usage proof</p>
+                <label>
+                    <input type="file" name="internet_bill" hidden>
+                    <i class="fas fa-upload"></i>
+                    Click to upload
+                </label>
+            </div>
+
+        </div>
+
+        <div class="consent-box">
+            <label>
+                <input type="checkbox" name="consent" required>
+                I consent to secure processing of documents.
+            </label>
+        </div>
+
+        <button class="upload-submit" type="submit">
+            Upload Documents
+        </button>
+
+    </form>
+
+</section>
+
+        <!-- AI ASSESSMENT -->
+        <section id="assessment" class="tab-section hidden">
+            <section class="card">
+                <h2><i class="fas fa-brain"></i> AI Credit Assessment</h2>
+
+                <a href="{{ url_for('run_assessment') }}" class="upload-all-btn">
+                    Run Credit Assessment
+                </a>
+            </section>
+        </section>
+
+        <!-- PRIVACY -->
+        <section id="privacy" class="tab-section hidden">
+            <section class="card">
+                <h2><i class="fas fa-shield-halved"></i> Privacy & Security</h2>
+                <ul class="security-features">
+    <li><i class="fas fa-user-shield"></i> User-isolated document storage</li>
+    <li><i class="fas fa-check-circle"></i> Consent-based processing</li>
+    <li><i class="fas fa-user-secret"></i> No third-party data sharing</li>
+    <li><i class="fas fa-chart-line"></i> Data used only for credit assessment</li>
+</ul>
+            </section>
+        </section>
+
+    </main>
+</div>
+
+<!-- JS FOR TAB SWITCH -->
+<script>
+function showSection(id, el = null) {
+    document.querySelectorAll('.tab-section').forEach(sec => {
+        sec.classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+
+    document.querySelectorAll('.sidebar a').forEach(a => {
+        a.classList.remove('active');
+    });
+    if (el) el.classList.add('active');
+}
+
+// AUTO-SWITCH TO DASHBOARD AFTER ASSESSMENT
+window.onload = function () {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has("success")) {
+        showSection("dashboard");
+    } else {
+        showSection("dashboard");
+    }
+};
+</script>
+
+
+</body>
+</html>

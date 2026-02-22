@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LendNova | Borrower Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+
+<body>
+
+<div class="register-page">
+
+    <!-- LEFT BRAND / INFO PANEL -->
+    <section class="info-panel">
+        <div class="info-content">
+            <h1><i class="fas fa-university"></i> LendNova</h1>
+            <p class="subtitle">
+                Secure borrower onboarding for AI-driven credit assessment
+            </p>
+
+            <ul class="benefits">
+                <li><i class="fas fa-check-circle"></i> No traditional credit history required</li>
+                <li><i class="fas fa-lock"></i> Bank-grade data security</li>
+                <li><i class="fas fa-user-check"></i> Consent-based data usage</li>
+                <li><i class="fas fa-brain"></i> Transparent AI decisions</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- RIGHT FORM PANEL -->
+    <section class="form-panel">
+        <div class="register-card">
+
+            <h2>Create Borrower Account</h2>
+            <p class="form-subtitle">
+                Register to begin your credit assessment
+            </p>
+
+            <!-- REAL FLASK FORM -->
+            <form method="POST" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your full name"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="name@example.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Minimum 6 characters"
+                            required>
+                    </div>
+                </div>
+
+                <div class="consent-box">
+                    <label>
+                        <input type="checkbox" required>
+                        I consent to the secure processing of my data for
+                        credit assessment purposes as per privacy policy.
+                    </label>
+                </div>
+
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus"></i>
+                    Register Securely
+                </button>
+
+            </form>
+
+            <p class="login-link">
+                Already registered?
+                <a href="{{ url_for('login') }}">Login here</a>
+            </p>
+
+            <p class="privacy-note">
+                <i class="fas fa-shield-halved"></i>
+                Your personal information is encrypted and never shared
+                without consent.
+            </p>
+
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

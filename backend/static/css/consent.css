@@ -1,0 +1,87 @@
+body {
+    font-family: Calibri, sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.consent-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.consent-card {
+    background: #ffffff;
+    width: 600px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.icon {
+    text-align: center;
+    font-size: 40px;
+    color: #4a6cf7;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.policy-box {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.policy-box h3 {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-btn {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+}
+
+.accept-btn {
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.accept-btn:hover {
+    background: #3653d4;
+}
